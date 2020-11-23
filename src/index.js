@@ -13,3 +13,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("http://localhost:3000/toys")
+  .then(response => response.json())
+  .then(data => console.log(data))
+});
+
+function createAndAppendToy(object){
+  let toyCollection = document.getElementById("toy-collection");
+  let toyCard = document.createElement("div");
+  toyCard.classList.add("card");
+  toyCard.innerText += object.name;
+};
